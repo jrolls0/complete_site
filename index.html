@@ -7,40 +7,6 @@
     <link rel="stylesheet" href="css/petstyle.css">
     <title>Pets</title>
 </head>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    function showSound(e, message) {
-      let bubble = document.createElement('div');
-      bubble.style.borderRadius = '10px';
-      bubble.style.padding = '5px';
-      bubble.style.position = 'absolute';
-      bubble.innerText = message;
-
-      bubble.style.top = (e.pageY - 55) + 'px';
-      bubble.style.left = (e.pageX - 25) + 'px';
-
-      document.body.appendChild(bubble);
-      setTimeout(() => document.body.removeChild(bubble), 2000);
-    }
-
-    let images = document.querySelectorAll('main img');
-    images.forEach(function(img) {
-        img.addEventListener('click', function(e) {
-          let sound = '';
-          if (img.alt.includes('labradoodle')) {
-              sound = 'Bark!';
-          } 
-          else if (img.alt.includes('cat')) {
-              sound = 'Meow!';
-          } 
-          else {
-              sound = 'Purr.';
-          }
-          showSound(e, sound);
-      });
-    });
-  });
-</script>
 <body>
    <a href = "#main" id="skip">Skip to Main content</a>
     <nav>
@@ -175,6 +141,41 @@
           
           
   </main>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        function showSound(e, message) {
+          let bubble = document.createElement('div');
+          bubble.style.borderRadius = '10px';
+          bubble.style.padding = '5px';
+          bubble.style.position = 'absolute';
+          bubble.innerText = message;
+    
+          bubble.style.top = (e.pageY - 55) + 'px';
+          bubble.style.left = (e.pageX - 25) + 'px';
+    
+          document.body.appendChild(bubble);
+          setTimeout(() => document.body.removeChild(bubble), 2000);
+        }
+    
+        let images = document.querySelectorAll('main img');
+        images.forEach(function(img) {
+            img.addEventListener('click', function(e) {
+              let sound = '';
+              if (img.alt.includes('labradoodle')) {
+                  sound = 'Bark!';
+              } 
+              else if (img.alt.includes('cat')) {
+                  sound = 'Meow!';
+              } 
+              else {
+                  sound = 'Purr.';
+              }
+              showSound(e, sound);
+          });
+        });
+      });
+    </script>
+
 </body>
 </html>
 
