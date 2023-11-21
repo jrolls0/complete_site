@@ -1,0 +1,242 @@
+html {
+    scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+article {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+#skip {
+    position: absolute;
+    top: 0; 
+    left: -999px; 
+    width: 200px;
+    padding: 10px; 
+    background-color: #000; 
+    color: #fff; 
+    text-align: center; 
+    z-index: 1;
+}
+
+figcaption {
+    margin-bottom: 15px; /* Adds space below each caption */
+}
+
+figure {
+    margin-bottom: 20px; /* Adds space below each figure */
+}
+
+#skip:focus {
+    left: 10px; 
+    top: 70px; 
+}
+
+img, video {
+    max-width: 100%;
+    max-height: 300px;
+    display: block;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: 2px solid #ddd; 
+    transition: all 0.3s ease; 
+}
+
+img:hover, video:hover {
+    border-color: #0077CC; 
+    transform: scale(1.05);
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: #2A70B2; 
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    box-sizing: border-box;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    
+}
+
+nav li a {
+    color: white; 
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+nav li.travel {
+    background-color: #2A4A78; 
+    border: 3px solid black;
+    font-weight: bold;
+}
+
+nav > ul > li:first-child {
+    flex: 0; 
+    display: flex; 
+    align-items: center;   
+}
+
+nav > ul > li:first-child > a > img {
+    max-height: 40px; 
+    min-width: 40px;
+    margin: 0px;
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #0077CC;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 3px solid #005799;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+main h2 {
+    border-bottom: 3px solid #0077CC;
+    padding: 8px 0;
+    margin: 25px 0;
+    font-size: 1.9rem;
+}
+
+figure {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+figcaption {
+    font-size: 1rem;
+    color: #444;
+    margin-left: 15px;
+    font-style: italic;
+}
+
+
+/* mobile view below */
+@media only screen and (max-width: 600px) {
+    
+    #skip {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    div {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* tablet view */
+@media only screen and (max-width: 800px) and (min-width: 601px) {
+    nav {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    nav ul {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    body {
+        font-size: 20px;
+    }
+
+    div:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    h1 {
+        font-size: 2.8rem;
+        margin-top: 30px;
+    }
+
+    main {
+        gap: 30px;
+    }
+
+    div {
+        padding: 20px;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+    }
+
+    a.button, button {
+        font-size: 18px;
+        padding: 15px 25px;
+    }
+
+    video {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    img.gif {
+        display: none;
+    }
+}

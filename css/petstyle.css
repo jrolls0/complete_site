@@ -1,0 +1,185 @@
+html {
+    scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px; /* Smaller font size for mobile */
+}
+
+body {
+    background-color: #f4f4f4;
+    background-image: url('../images/pexels_background.jpg'); /* Add your background image */
+    background-size: cover; /* Ensures the image covers the entire body */
+}
+
+#skip {
+    position: absolute;
+    top: 0; 
+    left: -999px; 
+    width: 200px;
+    padding: 10px; 
+    background-color: #000; 
+    color: #fff; 
+    text-align: center; 
+    z-index: 1;
+}
+
+#skip:focus {
+    left: 10px; 
+    top: 70px; 
+}
+article {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #2A70B2;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    box-sizing: border-box;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+nav li.pets {
+    background-color: #2A4A78;
+    border: 3px solid black;
+    font-weight: bold;
+}
+
+nav > ul > li:first-child {
+    flex: 0; 
+    display: flex; 
+    align-items: center;   
+}
+
+nav > ul > li:first-child > a > img {
+    max-height: 40px; 
+    min-width: 40px;
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;  
+    animation: fadeIn 3s forwards;  
+}
+
+div:hover {
+    transform: translateY(-10px);
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #0077CC;
+    font-size: 2rem; /* Adjusted for mobile */
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 3px solid #005799;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    margin-top: 20px;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #ddd; 
+    transition: all 0.3s ease; 
+}
+
+img:hover {
+    border-color: #0077CC; 
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Tablet View */
+@media only screen and (min-width: 601px) {
+    html {
+        font-size: 18px; /* Increased font size for tablet */
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjusted for tablet */
+    }
+
+    /* ... [other tablet-specific styles] ... */
+}
+
+/* Desktop View */
+@media only screen and (min-width: 801px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        /* Additional styling for desktop if needed */
+    }
+
+    h1 {
+        font-size: 2.8rem; /* Adjusted for desktop */
+    }
+
+    /* ... [other desktop-specific styles] ... */
+}
